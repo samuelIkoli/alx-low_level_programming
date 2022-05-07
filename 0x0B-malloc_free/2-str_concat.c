@@ -10,12 +10,13 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int size; 
+	int size;
 	unsigned int i, j;
 	char *concat;
 
 	if (s1 == NULL)
 		return (str_concat("", s2));
+
 	if (s2 == NULL)
 		return (str_concat(s1, ""));
 
@@ -24,13 +25,12 @@ char *str_concat(char *s1, char *s2)
 
 	if (concat == NULL)
 		return (NULL);
-
-	for (i = 0; i < strlen(s1); i++)	
+	for (i = 0; i < strlen(s1); i++)
 		concat[i] = s1[i];
 
 	for (j = 0; j < strlen(s2); j++)
 		concat[i + j] = s2[j];
 
-	concat[i+j] = '\0';
+	concat[i + j] = '\0';
 	return (concat);
 }
